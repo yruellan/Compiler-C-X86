@@ -1,6 +1,6 @@
 int main(){
 
-    // int a[10] ;
+    // int a[10];
     // a[0] = 10;
     // a[3] = 20;
     // print_int( a[0] ) ;
