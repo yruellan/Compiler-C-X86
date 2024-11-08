@@ -94,6 +94,8 @@ void FunCall::on_enter(){
 
 void FunCall::on_exit(){
     w_call_function(name,args.size());
+    if (is_bool)
+        w_convert_to_bool();
 }
 
 
@@ -117,7 +119,7 @@ void SvarSet::on_exit(){
 
 void ValueGet::on_exit(){
     w_push_var();
-    if (isBool)
+    if (is_bool)
         w_convert_to_bool();
 }
 
@@ -129,7 +131,7 @@ void List::on_enter(){
 
 void Int::on_enter(){
     int val = value;
-    if (isBool){
+    if (is_bool){
         if (val != 0){
             val = 1;
         }
@@ -189,18 +191,26 @@ void RLop::on_exit(){
 
 void LRop::on_exit(){
     w_lrop(op);
+    if (is_bool)
+        w_convert_to_bool();
 }
 
 void Uniop::on_exit(){
     w_uniop(uniop);
+    if (is_bool)
+        w_convert_to_bool();
 }
 
 void Binop::on_exit(){
     w_binop(binop);
+    if (is_bool)
+        w_convert_to_bool();
 }
 
 void Ternop::on_exit(){
     w_ternop();
+    if (is_bool)
+        w_convert_to_bool();
 }
 
 // Assembly -----------------------------
