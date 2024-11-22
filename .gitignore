@@ -1,0 +1,25 @@
+# system folders
+.DS_Store
+.vscode
+
+# logs
+log.txt
+
+# test files
+_test/**
+FinalProjectCpp/main.txt
+
+# build files
+**/_build
+**/build
+**/tmp
+**/_tmp
+
+# executables
+**/*.json
+**/*.exe
+**/*.s
+**/*.out
+
+# Temporary files
+**/_*
