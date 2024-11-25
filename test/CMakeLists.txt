@@ -13,12 +13,12 @@ enable_testing()
 if (${mode} STREQUAL "dune")
 
   message(STATUS "using mode dune")
-  set(cmd "${CMAKE_SOURCE_DIR}/../ParserLexer/expr2json.exe")
+  set(cmd "${CMAKE_SOURCE_DIR}/../parser/expr2json.exe")
   
 elseif (${mode} STREQUAL "interpret")
   
   message(STATUS "using mode interpret")
-  set(cmd "${CMAKE_SOURCE_DIR}/../Bash/test-interpret-sub.sh")
+  set(cmd "${CMAKE_SOURCE_DIR}/../bash/test-interpret-sub.sh")
 
 
 else()

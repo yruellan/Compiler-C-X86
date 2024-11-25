@@ -7,7 +7,7 @@ log.txt
 
 # test files
 _test/**
-FinalProjectCpp/main.txt
+src/main.txt
 
 # build files
 **/_build

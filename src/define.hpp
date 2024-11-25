@@ -33,4 +33,4 @@ inline string file_name;
 
 #define MALLOC "malloc"
 
-#define TEMPLATE "FinalProjectCpp/template.s"
+#define TEMPLATE "src/template.s"
