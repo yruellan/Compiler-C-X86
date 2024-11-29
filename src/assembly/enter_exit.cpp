@@ -16,22 +16,6 @@ void Sreturn::on_exit(){
     w_ret(called_contexts.back() == MAIN, value != nullptr);
 }
 
-// DEF_VAR -----------------------------
-
-void GVarDef::on_exit(){
-    
-    int size = contexts[GLOBAL].init_var(name, type_size(type), array_size, false);
-    w_init_global_var(name, size);
-}
-void SvarDef::on_exit(){
-    
-    int address = (value == nullptr) ? 0 : contexts[called_contexts.back()].var_offset;
-    int size = contexts[called_contexts.back()].init_var(name, type_size(type), ladder_size, false);
-    
-    w_init_var(size,address);
-}
-
-
 // DEF_FUNCTION SCOPE -----------------------------
 
 void GFunDef::on_enter(){

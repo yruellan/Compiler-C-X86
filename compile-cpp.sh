@@ -9,20 +9,9 @@ echo "------------------------------------"  >> log.txt
 echo "c file    : $c_file"  >> log.txt
 echo "json file : $json_file"  >> log.txt
 
-# set -e
 
 ./bash/build-dune-finalproject.sh || (echo "Failed to build dune"; exit 1;)
 ./bash/build-finalproject-cpp.sh || (echo "Failed to build finalproject-cpp"; exit 1;)
 
-touch "$s_file" || (echo "Failed to create file"; exit 1;)
-touch "file.s" || (echo "Failed to create sample s file"; exit 1;)
-
-cat src/template.s > "file.s"
-echo "main:" >> "file.s"
-echo "    mov %rbp, %rsp" >> "file.s"
-echo "    pop %rbp" >> "file.s"
-echo "    ret" >> "file.s"
-echo "    .section .note.GNU-stack" >> "file.s"
-
-./ParserBetter/expr2json.exe "$c_file"  >> log.txt || (echo "Failed to run expr2json"; exit 1;)
+./parser/expr2json.exe "$c_file"  >> log.txt || (echo "Failed to run expr2json"; exit 1;)
 ./src/build/main $json_file $2 || (echo "Failed to run finalproject-cpp"; exit 1;)

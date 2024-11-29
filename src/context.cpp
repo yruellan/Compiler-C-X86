@@ -31,9 +31,9 @@ Variable::Variable(string name, string ctx_name, int address, bool is_arg, int t
         this->full_size *= (*it);
     }
 
-    v_cout << "Variable : " << name << " " << ctx_name << " " << address << " " << is_arg << " " << type_size << " " << full_size << "\n";
-    for (int i : this->ladder_size) v_cout << i << " ";
-    v_cout << "\n";
+    // v_cout << "Variable : " << name << " " << ctx_name << " " << address << " " << is_arg << " " << type_size << " " << full_size << "\n";
+    // for (int i : this->ladder_size) v_cout << i << " ";
+    // v_cout << "\n";
 
 }
 
