@@ -4,18 +4,30 @@
 
 This is a compiler for C, written in C++. It compiles C code to x86-64 assembly code. This is an educational project, and it is not intended to be used in production.
 
+## Requirements
+
+You need to have OCaml, Menhir, CMake, and a C++ compiler installed on your machine.
+
 ## How to use
 
-To compile and run a C file, run the following command:
+To compile a C file, run the following command:
 
 ```bash
 ./compile-cpp.sh <input-file>
 ```
 
-This will generate an executable file with the same name as the input file, but without extension.
+This will generate an executable file with the same name as the input file.
 
+You can also run `./compile-gcc.sh <input-file>` to compile with gcc (for comparison).
 
-You can also run the following command to compile and run a file with gcc to compare the results: `./compile-gcc.sh <input-file>`
+To run an assembly file, run the following command:
+
+```bash
+gcc <input-file> -o <output-file> && ./<output-file>
+```
+
+or the `gcc <input-file> && ./a.out` if you don't want to specify an output file.
+
 
 ## How it works
 
